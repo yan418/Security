@@ -132,7 +132,44 @@ Spring-Shiro 这个工程，密码加密使用MD5盐值加密。
 步骤3. web.xml 文件也需要配置过滤器shiro
 步骤4. 数据库相关配置完成，基本用户查询操作
 步骤5. ShiroRealm.java 文件，重写授权和认证方法
+步骤6. PermissionName 这个类，编辑注解，在Controller层标注权限信息
+启动程序，跟上面工程一样。
+```
 
+# SpringSecurity 工程项目
+搭建SpringBoot工程，与SpringSecurity的整合 <br>
+（ SpringBoot + SpringSecurity + Mybatis + thymeleaf ）
+
+## 导入包
+``` bash
+  // SpringBoot的基本包，数据库相关、工具类的包省略
+     省略...
+  // 前台使用 thymeleaf 模板
+  <!-- SpringSecurity -->
+  <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+  </dependency>
+  <!-- SpringSecurity 与 thymeleaf整合 -->
+  <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+      <version>3.0.4.RELEASE</version>
+  </dependency>
+```
+
+# SpringBoot 与 SpringSecurity 整合
+基本配置和上面一样，数据库导入当前项目的数据<br>
+SpringSecurity 这个工程，密码加密使用BCrypt动态盐值加密。
+``` bash
+步骤1. 创建配置类 Securityconfig，继承 WebSecurityConfigurerAdapter 类
+      开启 @Configuration 、@EnableWebSecurity 注解
+      重写几个方法
+      WebSecurityConfigurerAdapter：自定义Security策略
+      AuthenticationManagerBuilder：自定义认证策略
+步骤2. 如果想重写 权限信息
+       继承 UserDetailsService 类，重写 loadUserByUsername 方法
+步骤3. 数据库相关配置完成，基本用户查询操作
 启动程序:
    用户  密码      角色权限
    yan	 123      ROLE_emp
