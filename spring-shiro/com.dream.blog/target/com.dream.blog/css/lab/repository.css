@@ -1,0 +1,180 @@
+/* 知识库 */
+
+#repository{
+	padding: 30px 0px;
+	min-height: 65vh;
+}
+
+#repository .repository-l{
+	width: 70%;
+}
+#repository .repository-l .repository-l-box{
+	background: #f0f0f0;
+	padding: 15px 0px;	
+	box-shadow: 0 0 14px 2px #E6E6E6;
+    border-radius: 2px;
+	margin: 0px 30px;
+}
+#repository .repository-l .list{
+	padding: 0 2.5rem;
+}
+#repository .repository-l .list h3{
+	font-weight: bold;
+	font-size: 22px;
+}
+#repository .repository-l .list ul{
+    line-height: 1.7;
+    padding-left: 1.2em;
+    margin-left: 8px;
+}
+#repository .repository-l .list ul li{
+	list-style: disc !important;
+    text-align: -webkit-match-parent;
+    cursor: pointer;
+}
+#repository .repository-l .list ul li a{
+	display: inline-flex;
+	width: 100%;
+	color: #777;
+	font-size: 16px;	
+}
+#repository .repository-l .list ul li a span{
+	/*文字超出显示...*/
+	display: block;
+	width: 100%;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	overflow:hidden;
+}
+#repository .repository-l .list ul li a:hover{
+	color: #FF7700;
+	text-decoration: none;
+}   
+ 
+
+
+
+   
+#repository .repository-r{
+	width: 30%;
+	width: 320px;
+}
+#repository .repository-r .repository-r-w{
+	width: 310px;
+}
+/*标签过度*/
+#repository .rep-r-active{
+	position: fixed;
+    z-index: 50;
+    top: 70px;
+}
+#repository .repository-r .classify{
+	padding: 0px 8px;
+	background: #f0f0f0;
+	box-shadow: 0 0 14px 2px #E6E6E6;
+    border-radius: 2px;
+}
+#repository .repository-r .classify .classify-title{
+	height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
+    border-bottom: 1px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+}
+#repository .repository-r .classify .classify-title img{
+	/*width: 12px;
+	height: 12px;*/
+	margin-right: 5px;
+}
+#repository .repository-r .classify ul{
+	padding: 13px 0px;
+}
+#repository .repository-r .classify ul li{	
+    line-height: 38px;
+    height: 38px;
+    cursor: pointer;
+}
+#repository .repository-r .classify ul li a{
+	color: #777;
+	display: block;
+	padding-left: 35px;
+	transition: all 0.3s ease 0s;
+}	
+#repository .repository-r .classify ul li a:hover{
+	text-decoration: none;
+	background: #FF7700;
+	color: white;
+}	
+#repository .repository-r .classify ul li a:focus{
+	text-decoration: none;
+}  
+
+
+
+#repository .repository-r .r-tab-name{
+	margin-top: 15px;
+}
+#repository .repository-r .r-label ul{
+	overflow: hidden;
+	padding: 14px 0px 29px 0px;
+}
+#repository .repository-r .r-label ul li{
+	display: inline-block;
+	line-height: 28px;
+    height: 28px;
+    margin-top: 10px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+#repository .repository-r .r-label ul li a{
+	display: inline-block;
+    padding: 0 8px;
+    border: 1px solid #FF7700;
+    background-color: #FF7700;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: all .3s ease;
+    color: #fff;
+}
+#repository .repository-r .r-label ul li a:hover{
+	border: 1px solid #FF7700;
+	background: white;
+	color: black;
+}
+
+
+
+@media (max-width: 1100px) {
+	
+	/*手机*/
+	#repository {
+    	padding: 20px 0px;
+    }
+	#repository .repository-box{
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	#repository .repository-l{
+		width: 100%;
+	}
+	#repository .repository-r{
+		width: 100%;
+		padding: 0px 30px 15px 30px;
+	}
+	#repository .repository-r .repository-r-w{
+		width: 100%;
+	}
+	#repository .rep-r-active{
+		position: inherit;
+	}
+	#repository .repository-r .classify{
+		display: none;
+	}
+	#repository .repository-r .r-label{
+		display: block !important;
+	}
+
+}
+

@@ -1,0 +1,36 @@
+/*梦想  （一个梦想的追随者）*/
+
+
+#dream{
+	padding: 70px 0px 60px 0px;
+}
+#dream .dream-info{
+	padding: 0px 15px;
+	margin: 0px 8px;
+	line-height: 1.8em;
+	font-size: 1.2em;
+}
+#dream .d-title{
+	text-align: center;
+	letter-spacing:1px;
+	padding-top: 22px;
+	font-size: 12px;
+}
+
+
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#dream{
+		padding: 36px 0px 36px 0px;
+	}
+	#dream .dream-info{
+		font-size: 1em;
+	}
+	#dream .d-title{
+		padding-top: 30px;
+		font-size: 0.7em;
+	}
+
+}

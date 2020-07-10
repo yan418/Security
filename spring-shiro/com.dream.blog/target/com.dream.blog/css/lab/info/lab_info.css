@@ -1,0 +1,151 @@
+/* 知识库 详情 css*/
+
+
+#info-header{
+  	height: 60px;
+	background: rgba(255, 255, 255, 0.78);
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+}
+#info-header .title {
+    margin: 0 45px;
+    line-height: 60px;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;  
+    font-size: 20px;
+}
+#info-header .home{
+	float: right;
+    font-size: 15px;
+    margin: 0px 30px;
+    line-height: 60px;
+    color: black;
+}
+#info-header .home:hover{
+	text-decoration: none;
+}
+#info-header .home img{
+	width: 18px;
+    height: 18px;
+    margin-top: -5px;
+    margin-right: 5px;
+}
+    
+    
+    
+    
+    
+#info-l {
+  margin-top: 0;
+  padding-left: 50px;
+  padding-bottom: 25px;
+  padding-top: 75px;
+  box-shadow: 0 0 0px 1px #ececec;
+  width: 320px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  padding-bottom: 50px;
+  padding-top: 80px;
+  overflow: auto;
+}
+#info-l ul{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+#info-l ul li{
+	padding: 10px 0px;
+	display: block;
+	color: #525252;
+	cursor: pointer;  
+}
+#info-l ul li:hover{
+	color: #FF7700;
+	text-decoration: none;
+}
+#info-l ul li:focus{
+	text-decoration: none;
+}
+#info-l ul .selected{
+	color: #FF7700 !important;
+}
+
+#book_sidebar>ul>li {
+  margin-left: 0;
+}
+
+
+
+
+#info_content{
+	max-width: 800px;
+    margin: 0 auto;
+    margin-left: 35%;
+    padding-top: 65px;
+    padding-bottom: 100px;
+    font-size: 15px; 
+    padding-right: 25px;
+    line-height: 2; 
+    counter-reset: section;
+}
+#info_content .name{
+	margin-bottom:40px;
+	font-size: 48px;
+    font-weight: 700;
+    color: #2F4050;
+}
+#info_content .info{
+    font-size: 15px;
+}
+#info_content .info hr{
+    border-top: 1px solid #ccc;
+}
+#info_content .info blockquote{
+    line-height: 22px;
+}
+
+
+#backtop{
+	position: fixed;
+    height: 50px;
+    width: 50px;
+    bottom: 40px;
+    right: 50px;
+    text-align: center;
+    z-index: 2;
+    font-size: 26px;
+    transition: .2s;
+    padding: 6px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease 0s;
+    display: none;
+}
+#backtop img{
+	width: 20px;
+	height: 20px;
+	display: block;
+	margin: 0px auto;
+}
+
+
+@media (max-width: 970px) {
+	
+	/*手机端*/
+	#info-l{
+		position: relative;
+		width: 100%;
+	}
+	#info_content{
+		margin-left:25px;
+	}
+
+}
+

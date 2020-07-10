@@ -1,0 +1,269 @@
+/*梦想家*/
+
+
+#luftmensch{
+	margin: 30px 0px;
+}
+#luftmensch .luftmensch-box{
+	overflow: hidden;
+}
+#luftmensch .luftmensch-l{
+	width: 70%;
+}
+
+
+#luftmensch .luftmensch-l-box .list{
+	background: #f0f0f0;
+    padding: 15px 0px;
+    box-shadow: 0 0 14px 2px #E6E6E6;
+    border-radius: 2px;
+    margin: 0px 30px;
+}
+#luftmensch .luftmensch-l-box .list h3{
+	text-align: center;
+	font-weight: bold;
+    font-size: 22px;
+    color: rgba(0,0,0,0.43);
+}
+#luftmensch .luftmensch-l-box .list ul{
+	padding: 0px;
+	padding-top: 14px;
+}
+#luftmensch .luftmensch-l-box .list ul li{
+	color: #777;
+	display: flex;
+	flex-direction: row;
+	font-size: 14px;
+	padding: 10px 2.5rem;
+}
+#luftmensch .luftmensch-l-box .list ul li i{
+	width: 30px;
+}
+#luftmensch .luftmensch-l-box .list ul li img{
+	/*width: 15px;
+	height: 15px;*/
+	margin-right: 20px;
+}
+
+
+
+/*模态框*/
+.leave-box{
+	position: relative;
+	width: 600px;
+	margin: 80px auto !important;
+}
+.leave-box .modal-title{
+    text-align: center;
+    color: #595959 !important;
+    font-weight: bold;
+}
+.leave-box .modal-body{
+	background: white;
+	font-size: 14px;
+}
+.leave-box .modal-body .leave-form-val{
+	overflow: hidden;
+}
+.leave-box .modal-body .leave-form-val .form-group{
+	border: 1px solid #ddd;
+}
+/*.leave-box .modal-body .leave-form-val .form-group input[name~="pet"]{
+	background: url(../../images/home/idea/ye.png) no-repeat 7px center;
+	background-size: 12px;
+}
+.leave-box .modal-body  .leave-form-val .form-group input[name~="web"]{
+	background: url(../../images/home/nav/logo.png) no-repeat 7px center;
+	background-size: 12px;
+}
+.leave-box .modal-body  .leave-form-val .form-group input[name~="imgSrc"]{
+	background: url(../../images/home/nav/logo.png) no-repeat 7px center;
+	background-size: 12px;
+}*/
+.leave-box .modal-body .leave-form-val .form-group input{
+	width: 100%;
+    height: 36px;
+    padding: 8px 12px 8px 8px;
+    border: none;
+    transition: all .3s ease;
+}
+.leave-box .modal-body textarea{
+	width: 100%;
+    padding: 8px;
+    resize: none;
+    border: none;
+    background: transparent;
+    transition: all .3s ease;
+    border: 1px solid #ddd;
+}
+.leave-box  .modal-footer button{
+	width: 100%;
+    padding: 6px 32px;
+    border-radius: 2px;
+    background: #F2F2F2;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-size: 14px;
+}
+.leave-box  .modal-footer button:hover{
+	background: #DADADA;
+}
+
+
+
+#luftmensch .luftmensch-l-box .blogroll{
+	margin-top: 25px;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly{
+	overflow: hidden;
+	padding: 0px;
+	margin: 20px 24px;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list{
+	float: left;
+	width: 33.33%;
+	overflow: hidden;
+	padding: 0px;
+	padding: 0px 6px;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list a{
+	background: #E3E3E3;
+	border-radius: 2px;	
+	display: flex;
+	align-items: center;
+	flex-direction: inherit;
+	width: 100%;
+	color: #555555;
+	padding: 8px 14px;
+	margin-bottom: 8px;
+	cursor: pointer;
+	transition: all 0.5s ease 0s;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list a:hover{
+	text-decoration: none;
+	background: #D2D2D2;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list a:focus{
+	text-decoration: none;
+	background: #D2D2D2;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-l{
+	width: 20%;
+	display: flex;
+	justify-content: center;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-l img{
+	width: 40px;
+	height: 40px;
+    border-radius: 50%;
+	margin: 0px auto;
+	display: block;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-r{
+	width: 80%;
+	padding-left: 5px;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-r span{
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+}
+#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-r font{	
+	font-size: 12px;
+	width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+}
+#luftmensch .luftmensch-l-box .blogroll .go-in-we {
+	text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+#luftmensch .luftmensch-l-box .blogroll .go-in-we span{
+	cursor: pointer;
+}
+
+
+
+#luftmensch .luftmensch-r {
+	width: 320px;
+}
+#luftmensch .luftmensch-r .reward{
+	padding: 0px 8px;
+    background: white;
+    box-shadow: 0 0 14px 2px #E6E6E6;
+    border-radius: 2px;
+}
+#luftmensch .luftmensch-r .reward .reward-title{
+	height: 42px;
+    line-height: 42px;
+    padding: 0 15px;
+    border-bottom: 1px solid #E6E6E6;
+    display: flex;
+    align-items: center;
+}
+#luftmensch .luftmensch-r .reward .reward-in{
+	background: white;
+	padding: 20px 0px;
+}
+#luftmensch .luftmensch-r .reward .reward-in img{ 
+	width: 50%;
+    margin: 0px auto;
+    display: block;
+}
+#luftmensch .luftmensch-r  .map{
+	margin-top: 15px;
+	padding: 0px;
+}
+#luftmensch .luftmensch-r  .map .reward-title span{
+	padding-left: 8px;
+}
+#luftmensch .luftmensch-r  .map-box{
+	width: 100%;
+	height: 300px;
+}
+
+/*地图样式*/
+.anchorBL{
+	display: none;
+}
+
+@media (max-width: 1100px) {
+	
+	/*手机*/
+	#luftmensch .luftmensch-l{
+		width: 100%;
+	}
+	#luftmensch .luftmensch-l-box .blogroll .friendly{
+		margin: 20px 4px;
+	}
+	#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list{
+		width: 50%;
+		height: 55px;
+	}	
+	#luftmensch .luftmensch-l-box .blogroll .friendly .friendly-list .friendly-l img{
+		width: 24px;
+		height: 24px;
+	}
+	#luftmensch .luftmensch-r{
+		width: 100%;
+  	    padding: 25px 30px;
+	}
+	#luftmensch .luftmensch-r  .map{
+		margin-top: 25px;
+	}
+	
+	
+}
+
+
+
+
+
+
+
+

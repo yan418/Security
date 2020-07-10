@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.blog.dao.LuftmenschDao">
+
+	 <!-- 查询梦想家列表     -->
+	 <select id="findLuftmensch" resultType="com.dream.blog.model.Luftmensch">
+	 	select 
+  		   l.luftmensch_id,
+		   l.luftmensch_name,
+		   l.luftmensch_pet,
+		   l.luftmensch_post,
+           l.luftmensch_website,
+           l.luftmensch_tel,
+           l.luftmensch_profile,
+           lu.luftmensch_filePath,
+           lu.luftmensch_fileDisgest
+		 from  luftmensch l join luftmensch_img lu 
+		       on l.luftmensch_id = lu.luftmensch_uid
+		 where l.luftmensch_home = 1
+		 order by l.luftmensch_number asc, l.luftmensch_id desc; 
+	 </select>
+	 
+     <!-- 创建梦想家    把该条id值返回    -->
+	 <insert id="saveLuftmensch"  parameterType="com.dream.blog.model.Luftmensch" useGeneratedKeys="true" keyProperty="luftmensch_id" >
+	 	Insert into luftmensch
+	 	( 
+	 	  luftmensch_id,
+          luftmensch_name,
+          luftmensch_pet,
+          luftmensch_post,
+          luftmensch_website,   	   
+          luftmensch_profile,
+          luftmensch_time,
+          luftmensch_home,
+          luftmensch_number
+	 	) 
+	 	values
+	 	(
+	 	 null,
+		 #{luftmensch_name},
+		 #{luftmensch_pet},
+		 #{luftmensch_post},
+		 #{luftmensch_website},
+		 #{luftmensch_profile},
+		 #{luftmensch_time},
+		 #{luftmensch_home},
+		 #{luftmensch_number}
+	 	)
+	 </insert>
+	 
+	 <!-- 创建梦想家图片    把该条id值返回    -->
+	 <insert id="saveLuftmenschImg"  parameterType="com.dream.blog.model.Luftmensch" >
+	 	Insert into luftmensch_img 
+	 	( 
+	 	  luftmensch_i_id,
+          luftmensch_uid,
+          luftmensch_filePath
+	 	) 
+	 	values
+	 	(
+	 	 null,
+		 #{luftmensch_uid},
+		 #{luftmensch_filePath}
+	 	)
+	 </insert>
+	 
+	 <!-- 查询梦想家最大的序号  -->
+	 <select id="findLuftmenschMaxNumber" resultType="java.util.HashMap">
+	    select 
+	      luftmensch_name, max(luftmensch_number) as number
+	    from luftmensch 
+	 </select>
+	 
+	 <!-- 查询该梦想家注册没 -->
+	 <select id="findLuftIsExist" resultType="java.util.HashMap" parameterType="string">
+	    select 
+	      luftmensch_id  as id
+	    from luftmensch 
+	      where luftmensch_pet = #{pet} and luftmensch_website = #{postbox}
+	 </select>
+	 
+</mapper>

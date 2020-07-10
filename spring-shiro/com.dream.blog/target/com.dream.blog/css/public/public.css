@@ -1,0 +1,44 @@
+/* 公共样式 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend,{ margin:0; padding:0; }
+ul, ol { list-style:none; }
+body{
+	font-family:"微软雅黑";
+	background-color:#E3E3E3;
+}
+a{outline:none;}
+*{outline:none;}
+/*表单选中的阴影*/
+*:focus {outline: none;}
+.clearfix:after { content:"."; display:block; height:0; visibility:hidden; clear:both; }
+.clearfix{ zoom:1; }
+
+
+/*滚动条样式*/
+::selection{background:#169ADA;text-shadow:none;color:#fff;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-button{display:none}
+::-webkit-scrollbar-track{background-color:black}
+::-webkit-scrollbar-track-piece{background:white}
+::-webkit-scrollbar-thumb{background-color: #FF7700;}
+::-webkit-scrollbar-thumb:hover{background-color:#3A5898}
+::-webkit-scrollbar-corner{background-color:#535353}
+::-webkit-scrollbar-resizer{background-color:#FF6E00}
+
+
+/*中间宽度*/
+.middle-center{
+	width: 1200px;
+    margin: 0px auto;
+}
+
+
+@media (max-width: 1200px) {
+	
+	/*手机*/
+	.middle-center{
+		width: 100%;		
+	}
+
+	
+
+}

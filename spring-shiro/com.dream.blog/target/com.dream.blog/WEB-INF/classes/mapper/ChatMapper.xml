@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.blog.dao.ChatDao">
+	
+	
+	 <!-- 查询留言列表  -->
+	 <select id="findChatList"  resultType="com.dream.blog.model.Chat">
+	    select 
+		  c.chat_id,
+		  c.chat_sonid,
+          c.chat_content,
+          c.chat_time,
+          l.luftmensch_id    as luftmensch_id,  
+          l.luftmensch_name  as luftmensch_name,
+          l.luftmensch_pet   as luftmensch_pet,
+		  lu.luftmensch_filePath as luftmensch_filePath
+	   from chat c , luftmensch l , luftmensch_img lu 
+	   where c.chat_uid = l.luftmensch_id and l.luftmensch_id = lu.luftmensch_uid 
+	   	     and c.chat_home = 1
+	   ORDER BY c.chat_id DESC; 
+	 </select>
+	 
+	 <!-- 
+	 <sql id="equeryWhere">	 	 
+		  select 
+  		    luftmensch_id,
+		    luftmensch_pet,
+            luftmensch_filePath
+		  from  luftmensch join luftmensch_img  on luftmensch.luftmensch_id = luftmensch_img.luftmensch_uid
+		  <include refid="equeryWhere"></include>
+  	 </sql>
+	 -->
+	 
+	 <!-- 创建留言    把该条id值返回    -->
+	 <insert id="saveChat"  parameterType="com.dream.blog.model.Chat" useGeneratedKeys="true" keyProperty="chat_id" >
+	 	Insert into chat 
+	 	( 
+	 	  chat_id,
+	 	  chat_sonid,
+	 	  chat_uid,
+	 	  chat_byuid,
+	 	  chat_home,
+	 	  chat_content,
+	 	  chat_time
+	 	) 
+	 	values
+	 	(
+	 	 null,
+		 #{chat_sonid},
+		 #{chat_uid},
+		 #{chat_byuid},
+		 #{chat_home},
+		 #{chat_content},
+		 #{chat_time}
+	 	)
+	 </insert>
+	
+</mapper>

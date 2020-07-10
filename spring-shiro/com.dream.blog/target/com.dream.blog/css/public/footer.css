@@ -1,0 +1,58 @@
+/* 底部 */
+
+
+#footer {
+	background: #333333;
+	text-align: center;
+	padding: 40px 0px 25px 0px;
+}
+#footer .footer-ul{
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	margin: 0px auto;
+	display: block;
+	width: 340px;
+}
+#footer .footer-ul li{
+	float: left;
+	width: 20%;
+	text-align: center;
+}
+#footer .footer-ul li a{
+	color: #888888;
+	text-decoration: none;
+	font-size: 20px;
+}
+#footer .footer-ul li a span:hover{
+	color: #FF7700;
+}
+
+
+#footer .copyright{
+	margin-top: 22px;
+	border-top: 1px solid #444;
+    text-align: center;
+    padding-top: 20px;
+    color: #888;
+}
+
+/*二维码*/
+.layer_notice {
+	padding: 0px;
+}
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#footer .footer-ul{
+		width: 90%;
+	}
+	#footer .footer-ul li a{
+		font-size: 1em;
+	}
+	#footer .copyright{
+		font-size: 0.8em;
+	}
+}			
+			

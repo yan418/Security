@@ -1,0 +1,100 @@
+/* banner 图*/
+
+
+#banner {
+	background: #272833 url(../../images/home/bghome.jpg) no-repeat center center ;
+    background-attachment: fixed;  /* 固定背景图片 */
+	background-size: cover;		   /*覆盖背景区域*/
+	/*box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);*/
+	min-height: 100%;  /* 相当于100% */
+	position: relative;
+	text-align: center;
+	z-index: 10;
+}
+
+#banner:before {
+	content: '';
+	display: inline-block;
+	height: 100vh; 
+	vertical-align: middle;
+	width: 1%;
+}
+
+#banner:after {
+	content: '';
+	display: block;
+	height: 100vh;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#banner .content {
+	display: inline-block;
+	margin-right: 1%;
+	max-width: 95%;
+	padding: 6em;
+	position: relative;
+	text-align: right;
+	vertical-align: middle;
+	z-index: 1;
+}
+
+#banner .content header {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#banner .content header h2 {
+	font-size: 2.5em;
+	margin: 0;
+}
+
+#banner .content header p {
+	margin: 0.5em 0 0 0;
+	top: 0;
+}
+
+#banner .content .image {
+	border-radius: 100%;
+	display: inline-block;
+	height: 14em;
+	margin-left: 3em;
+	vertical-align: middle;
+	width: 14em;
+}
+
+#banner .content .image img {
+	border-radius: 100%;
+	display: block;
+	width: 100%;
+	border: 4px solid white;
+}
+
+
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	
+	#banner {
+		background-attachment: scroll;
+	}
+	#banner .goto-next {
+		height: 7em;
+	}
+	#banner .content {
+		padding: 9em 0;
+		text-align: center;
+	}
+	#banner .content header {
+		display: block;
+		margin: 0 0 2em 0;
+		text-align: center;
+	}
+	#banner .content .image {
+		margin: 0;
+	}
+
+}

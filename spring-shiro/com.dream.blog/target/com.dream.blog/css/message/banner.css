@@ -1,0 +1,51 @@
+/* banner 图*/
+
+
+#message-banner {
+	background: #303F6A;
+	/*渐变*/
+    background: linear-gradient(-150deg,#83a2f1,#303F6A );
+	height: 250px;
+	text-align: center;
+	font-size: 18px;
+}
+#message-banner .content{
+	height:100%;
+	text-align: center;
+	color: white;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#message-banner .content span{
+	margin-top: 20px;
+}
+#message-banner .content button{
+	margin-top: 24px;
+    padding: 6px 24px;
+    /*渐变*/
+    background: linear-gradient(#FF7700,#FF5944,#FF4244);
+    color:white;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    box-shadow: 0 4px 25px rgba(232,5,5,.4);
+}
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#message-banner{
+		margin-top: 48px;
+		height: 120px;
+	}
+	#message-banner .content span{
+		margin-top: 0px;
+		font-size: 0.8em;
+	}
+	#message-banner .content button{
+		margin-top: 20px;
+	}
+	
+}

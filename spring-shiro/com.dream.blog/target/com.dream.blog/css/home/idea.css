@@ -1,0 +1,103 @@
+/* 开发理念 （ 尝试实现响应式设计 ）*/
+
+#idea{
+	background: #232C3D;
+	padding: 75px 0px;
+}
+
+#idea .i-icon{
+	display: block;
+	margin: 0px auto;
+	display: block;
+	width: 50px;
+}
+#idea  .i-title{
+	color: white;
+	text-align: center;
+	padding: 18px 0px;
+	letter-spacing: 1px;
+	font-size: 2.2em;
+}
+
+
+#idea  .ban{
+	overflow: hidden;
+	margin-top: 20px;
+}
+#idea  .ban .ban-l{
+	float: left; 
+	width: 33.33%;
+	color: white;
+}
+#idea  .ban .ban-l .design{
+	width: 285px;
+	margin-top: 18%;
+}
+#idea  .ban .ban-l .design h3{
+	font-size: 25px;
+	letter-spacing: 2px;
+	padding-bottom: 25px;
+}
+#idea  .ban .ban-l .design p{
+	line-height: 27px;
+	font-size: 15px;
+}
+#idea  .ban .i-phone{
+	width: 63%;
+	margin: 0px auto;
+	display: block;
+}
+
+
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#idea {
+	    padding: 60px 0px;
+	}
+	#idea .i-icon{
+		width: 35px;
+	}
+	#idea  .i-title{
+		font-size: 1.6em;
+	}
+	   
+	
+	#idea  .ban .ban-l{
+		width: 100%;
+		padding: 0px 20px;
+	}
+	#idea  .ban .i-phone{
+		display: none;
+	}
+	#idea  .ban .ban-l .design{
+		width: 100%;
+		margin-top: 0px;
+	}
+	#idea  .ban .ban-l .design h3{
+		font-size: 1.2em;
+		padding-bottom: 0px;
+	}
+	#idea  .ban .ban-l .design p{
+		line-height: 1.6em;
+   		font-size: 0.9em;
+	}
+	
+
+}
+
+
+/*小于930 - 768 之间 处理*/
+@media screen and (min-width:768px) and (max-width:930px){
+	#idea  .ban .ban-l .design{
+		width: 230px;
+	}
+	#idea  .ban .ban-l .design h3{
+		font-size: 1.2em;
+		padding-bottom:5px;
+	}
+	#idea  .ban .ban-l .design p{
+		line-height: 1.6em;
+	}
+}

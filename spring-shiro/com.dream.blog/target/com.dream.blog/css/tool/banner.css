@@ -1,0 +1,30 @@
+/* banner 图*/
+
+
+#tool-banner {
+	background: #303F6A;
+	/*渐变*/
+    background: linear-gradient(-150deg,#83a2f1,#303F6A );
+	height: 250px;
+	line-height: 250px;
+	text-align: center;
+	font-size: 18px;
+}
+#tool-banner .content{
+	text-align: center;
+	color: white;
+}
+
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#tool-banner{
+		margin-top: 48px;
+		height: 120px;
+		line-height: 120px;
+		font-size: 1em;
+	}
+	
+
+}

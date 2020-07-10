@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.modules.dao.UserDao">
+
+    <resultMap id="dealUserMap" type="com.modules.entities.User">
+        <result property="id" column="id"></result>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <result property="ticket" column="ticket"></result>
+        <collection property="roles" ofType="com.modules.entities.Role">
+            <result property="sn" column="sn"></result>
+        </collection>
+    </resultMap>
+
+
+    <select id="getUser" resultMap="dealUserMap">
+        select
+        u.id,
+        u.username,
+        u.password,
+        u.ticket,
+        r.sn
+        from user u JOIN user_role ur Join role r
+        on u.id = ur.user_id  and  r.id = ur.role_id
+        <where>
+            <if test="username!=null and username!=''">
+                username = #{username}
+            </if>
+        </where>
+    </select>
+
+
+
+    <select id="getUserById" resultType="com.modules.entities.User">
+        select * from user where id=#{id}
+    </select>
+
+    <select id="selectPassword" resultType="string">
+        select password from user where username = #{username}
+    </select>
+
+</mapper>

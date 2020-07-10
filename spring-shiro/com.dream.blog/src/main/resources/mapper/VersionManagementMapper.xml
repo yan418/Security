@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.blog.dao.VersionManagementDao">
+
+	<select id="findList" resultType="com.dream.blog.model.VersionManagement">
+	 	select 
+	 	  id, 
+ 		  platform,
+		  version,
+		  imprint,
+		  downloadLink,
+		  storeAddress,
+		  creationTime,
+		  alterTime
+	 	from version_management
+	 	Order By creationTime Desc	 	
+	</select>
+	
+	<select id="findOne" resultType="com.dream.blog.model.VersionManagement" parameterType="integer" >
+	 	select 
+	 	  id, 
+ 		  platform,
+		  version,
+		  imprint,
+		  downloadLink,
+		  storeAddress,
+		  creationTime,
+		  alterTime
+	 	from version_management
+	 	where 
+	 	  id = #{id}
+	</select>
+
+    <update id="alterOne" parameterType="com.dream.blog.model.VersionManagement">
+    	update 
+    	  version_management 
+    	set 
+    		<if test="version !=null and version != '' ">
+				version=#{version,jdbcType=VARCHAR},
+			</if>
+			<if test="imprint !=null and imprint != '' ">
+				imprint=#{imprint,jdbcType=VARCHAR},  
+			</if>
+			<if test="downloadLink !=null and downloadLink != '' ">
+				downloadLink=#{downloadLink,jdbcType=VARCHAR},
+			</if>
+			<if test="storeAddress !=null and storeAddress != '' ">
+				storeAddress=#{storeAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="alterTime !=null and alterTime != '' ">
+				alterTime=#{alterTime,jdbcType=VARCHAR}
+			</if>
+    	where 
+    		id = #{id}
+    </update>
+
+	<delete id="deleteOne">
+	 	delete 
+	 	   from  version_management
+	  	where 
+	  	   id = #{id}
+	</delete>
+    
+    <insert id="saveOne"  parameterType="com.dream.blog.model.VersionManagement" useGeneratedKeys="true" keyProperty="id" >
+	 	Insert 
+	 	  into version_management 
+	 	( 
+	 	  platform,
+	 	  version,
+	 	  imprint,
+	 	  downloadLink,
+	 	  storeAddress,
+	 	  creationTime
+	 	) 
+	 	values
+	 	(
+		  #{platform},
+		  #{version},
+		  #{imprint},
+		  #{downloadLink},
+		  #{storeAddress},
+		  #{creationTime}
+	 	)
+	 </insert>
+	
+</mapper>

@@ -1,0 +1,93 @@
+/* 个人简介   （ 我要变大牛 ）*/
+
+#brief{
+	margin-top: 70px;
+	margin-bottom: 45px;
+}
+
+#brief h1{
+	font-size: 2.2em;
+	text-align: center;
+}
+
+#brief .grids{
+	padding-top: 47px;
+}
+
+#brief .brief-list{
+	position: relative;
+}
+
+#brief .grids .grid {
+	position: relative;
+	margin: 0px auto;
+	width: 80px;
+	height: 80px;
+	cursor: w-resize;
+}
+
+#brief  .grid .icon{
+	border-radius: 50%;
+    background: #FF7700;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+#brief .grids .grid img{
+	/*width: 28px;
+	height: 28px;*/
+	position: relative;
+	top: 28%;
+	z-index: 20;
+}
+#brief .brief-list p{
+	text-align: left;
+    line-height: 1.8em;
+    word-wrap: break-word;
+    margin: 24px 8px;
+    font-size: 15px;
+}
+
+
+/*动画效果*/
+#brief .grid .icon:before{
+	content: '';
+    width: 80px;
+	height: 80px;
+    border-radius: 50%;   
+    position: absolute;
+	left: 0;
+    transform: scale(0);
+    transition: all 0.3s ease 0s;
+}
+#brief .grid:hover  .icon:before{
+  background:#232C3D;
+  transform: scale(1); 
+}
+
+#brief .centre-i{
+	background: #232C3D !important;
+}
+#brief .grid:hover  .centre-i:before{
+	transform: scale(1); 
+	background: #FF7700;
+}
+
+
+@media (max-width: 768px) {
+	
+	/*手机*/
+	#brief{
+		margin-top: 50px;
+    	margin-bottom: 15px;
+	}
+	#brief .grids{
+		padding-top: 27px;
+	}
+
+	
+
+}

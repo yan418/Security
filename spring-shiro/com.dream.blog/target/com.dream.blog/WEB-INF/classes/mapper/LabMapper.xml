@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.blog.dao.LabDao">
+
+	 <!-- 查询知识库有哪些一级分类  -->
+	 <select id="findLabOne" resultType="com.dream.blog.model.LabClass">
+	 	select 
+	 	   lab_class_id,
+	 	   lab_class_name
+	 	from lab_class
+	 	where lab_classl_grade=1
+	 	ORDER BY lab_class_p_num DESC; 
+	 </select>
+	 
+	 <!-- 查询某一级分类下二级分类 列表  -->
+	 <select id="findLabTwo" resultType="com.dream.blog.model.LabClass">
+	 	select 
+			lab_class_id,
+		    lab_class_name
+		from 
+			lab_class  join  lab_class_relation lcr
+			on  lab_class_id = lcr.lab_r_lab_c_id
+		where lcr.lab_r_parent = #{id}
+	    ORDER BY lab_class_s_num ASC,lab_class_id DESC; 
+	 </select>
+	
+	 <!-- 查询全部二级分类列表  -->
+	 <select id="findLabTwoList" resultType="com.dream.blog.model.LabClass">
+	 	select 
+			lab_class_id,
+		    lab_class_name
+	 	from lab_class
+	 	where lab_classl_grade=2
+	 	ORDER BY lab_class_id asc; 
+	 </select>
+	 
+	 <!-- 查询某二级分类下知识库列表  -->
+     <select id="findLabByLabClass" parameterType="integer" resultType="com.dream.blog.model.Lab">
+		select 
+		   lab_id,
+		   lab_tag,
+           lab_name
+		from   lab l 
+		where  lab_classify_two = #{id} and lab_home = 1
+	    ORDER  BY lab_number ASC, lab_id DESC; 
+	 </select>
+	 
+	 <!-- 查询某一级分类下的  知识库列表前num条 请求  -->
+	 <select id="findLabByNum"  resultType="com.dream.blog.model.Lab">
+		select 
+		   lab_id,
+		   lab_tag,
+		   lab_classify_two,
+           lab_name
+		from   lab l 
+		where  lab_home=1 and lab_classify_one=#{id}
+	    ORDER  BY lab_number ASC, lab_id DESC
+	    limit  #{num}; 
+	 </select>
+  	
+  	
+  	 <!-- 查询一条知识库详情数据   -->
+	 <select id="findLabInfo"  resultType="com.dream.blog.model.Lab">
+		select 
+		   lab_id,
+		   lab_tag,
+           lab_name,
+           lab_info,
+           lab_view,
+           lab_like,
+           lab_time
+		from  lab  
+		where lab_home=1 and lab_id=#{id}; 
+	 </select>
+  	 
+  	 <!-- 查询二级分类的名称   -->
+	 <select id="findLabClassName"  resultType="string">
+		select 
+		   lab_class_name
+		from  lab_class  
+		where lab_class_id = #{id}; 
+	 </select>
+	 
+	 
+	 <!-- 查询知识库所有的标签名称   -->
+	 <select id="findLabTagName"  resultType="string">
+		select 	  
+		  distinct lab_tag
+		from  lab 
+		where lab_home=1 
+	 </select>
+  	 
+  	 <!-- 查询该知识库 标签名的id值  -->
+	 <select id="findLabIdByTagName"  resultType="integer" parameterType="string" >
+		select 	  
+		  distinct lab_classify_two
+		from  lab 
+		where lab_home=1 and lab_tag=#{tagName}
+	 </select>
+  	 
+  	 <!-- 修改一条知识库访问量   根据ID值修改 -->
+     <update id="alterLabByView" parameterType="com.dream.blog.model.Lab">
+    	update lab set 
+    	lab_view   =  #{lab_view}
+    	where lab_id  = #{lab_id}
+     </update>
+	 
+</mapper>
